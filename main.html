@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shortcut Helper</title>
     <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/search.css" />
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">Welcome to our Shortcut Assistant!</h1>
+        <h1 class="display-4">Welcome to our Shortcut Helper!</h1>
         <p class="lead">
-          We specialize in Eclipse IDE and Visual Studio Code Shortcuts and How
-          to Guides. Select your software from the dropdown below.
+          We specialize in Elipse and VS Code Shortcuts and How to Guides.
+          Select your software from the dropdown below.
         </p>
       </div>
+    </div>
+
+    <!--SearchBar-->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchBar"
+        class="shortcuts"
+        placeholder="Search shortcuts..."
+      />
+      <div id="resultsDropdown"></div>
     </div>
 
     <!--Dropdown-->
@@ -150,6 +162,37 @@
     </ul>
   `,
       };
+      //Links to each how-to guide
+      const howToLinks = {
+        eclipse: [
+          {
+            title: "Create Eclipse Project",
+            url: "eclipse/create_proj_ec.html",
+          },
+          {
+            title: "Create Eclipse Class",
+            url: "eclipse/create_class_ec.html",
+          },
+          {
+            title: "Customize Eclipse Shortcuts",
+            url: "eclipse/customize_shortcuts.html",
+          },
+        ],
+        vscode: [
+          {
+            title: "Create VS Code Settings",
+            url: "vscode/how_to_vscode/create_vscode.html",
+          },
+          {
+            title: "Import VS Code Settings",
+            url: "vscode/how_to_vscode/import_settings.html",
+          },
+          {
+            title: "Customize VS Code Shortcuts",
+            url: "vscode/how_to_vscode/customize_shortcuts.html",
+          },
+        ],
+      };
 
       // Handle click on nested feature
       document.querySelectorAll(".feature").forEach((item) => {
@@ -159,13 +202,18 @@
 
           if (feature === "shortcuts") {
             shortcutContent.innerHTML =
-              shortcutsData[software] || "<p>No shortcuts available.</p>";
+              `<div class="inner-content">` +
+              (shortcutsData[software] || "<p>No shortcuts available.</p>") +
+              `</div>`;
           } else if (feature === "howto") {
-            const urls = {
-              eclipse: "eclipse-howto.html",
-              vscode: "vscode-howto.html",
-            };
-            window.location.href = urls[software];
+            // clickable list of How To links
+            let listHTML = `<h2>${software === "eclipse" ? "Eclipse" : "VS Code"} How To Guides</h2><ul>`;
+            howToLinks[software].forEach((item) => {
+              listHTML += `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`;
+            });
+            listHTML += `</ul>`;
+
+            shortcutContent.innerHTML = `<div class="inner-content">${listHTML}</div>`;
           }
         });
       });
