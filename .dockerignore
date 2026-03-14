@@ -1,6 +1,0 @@
-# flyctl launch added from .gitignore
-**\.DS_Store
-**\*.log
-**\node_modules
-**\.vscode
-fly.toml
