@@ -5,9 +5,10 @@ const app = express();
 const fs = require("fs");
 const path = require("path");
 
+app.use(express.static(__dirname));
+
 app.get("/", function (req, res) {
-  let doc = fs.readFileSynic("/main.html", "utf 8");
-  res.send(doc);
+  res.sendFile(path.join(__dirname, "main.html"));
 });
 
 app.listen(process.env.PORT || 8080);
