@@ -5,6 +5,19 @@ body {
   padding: 20px;
 }
 
+.container {
+  text-align: center;
+}
+
+#results {
+  margin-top: 10px;
+}
+
+.result-item {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;

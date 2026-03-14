@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shortcut Helper</title>
     <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/search.css" />
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid">
@@ -15,6 +16,19 @@
           Select your software from the dropdown below.
         </p>
       </div>
+    </div>
+
+    <!--SearchBar-->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchBar"
+        class="shortcuts"
+        placeholder="Search shortcuts..."
+        autocomplete="on"
+      />
+
+      <div id="resultsDropdown"></div>
     </div>
 
     <!--Dropdown-->
@@ -56,47 +70,20 @@
 
     <div id="shortcutContent"></div>
 
-    <script>
-      const shortcutContent = document.getElementById("shortcutContent");
-
-      // Shortcut texts
-      const shortcutsData = {
-        eclipse: `
-    <h2>Eclipse Shortcuts</h2>
-    <ul>
-      <li><b>Ctrl+Shift</b> - Content assist (auto-complete suggestions)</li>
-      <li><b>Ctrl+Shift+F</b> - Format Code</li>
-      <li><b>Ctrl+ /</b> - Toggle line comment</li>
-    </ul>
-  `,
-        vscode: `
-    <h2>VS Code Shortcuts</h2>
-    <ul>
-      <li><b>Ctrl+P</b> - Quick Open</li>
-      <li><b>Ctrl+Shift+P</b> - Command Palette</li>
-      <li><b>Ctrl+\`</b> - Toggle Terminal</li>
-    </ul>
-  `,
+    <!--Script-->
+    <script type="text/javascript">
+      document.getElementById("searchform").onsubmit = function () {
+        " ";
       };
-
-      // Handle click on nested feature
-      document.querySelectorAll(".feature").forEach((item) => {
-        item.addEventListener("click", () => {
-          const software = item.dataset.software;
-          const feature = item.dataset.feature;
-
-          if (feature === "shortcuts") {
-            shortcutContent.innerHTML =
-              shortcutsData[software] || "<p>No shortcuts available.</p>";
-          } else if (feature === "howto") {
-            const urls = {
-              eclipse: "eclipse-howto.html",
-              vscode: "vscode-howto.html",
-            };
-            window.location.href = urls[software];
-          }
-        });
-      });
+      {
+        window.location =
+          "http://www.google.com/search?q=site:yourdomainname " +
+          document.getElementById("test").value;
+      }
+      return false;
     </script>
+
+    <script src="src/main.js"></script>
+    <script src="src/searchBar.js"></script>
   </body>
 </html>
