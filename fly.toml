@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for hackthebreak2026 on 2026-03-13T23:00:47-07:00
+# fly.toml app configuration file generated for hackthebreak2026-ancient-sky-149 on 2026-03-13T23:31:49-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hackthebreak2026'
+app = 'hackthebreak2026-ancient-sky-149'
 primary_region = 'yyz'
 
 [http_service]
@@ -16,5 +16,6 @@ primary_region = 'yyz'
 
 [[vm]]
   memory = '1gb'
+  cpu_kind = 'shared'
   cpus = 1
   memory_mb = 1024
