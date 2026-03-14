@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shortcut Helper</title>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Welcome to our Shortcut Helper!</h1>
+        <p class="lead">
+          We specialize in Elipse and VS Code Shortcuts and How to Guides.
+          Select your software from the dropdown below.
+        </p>
+      </div>
+    </div>
+
+    <!--Dropdown-->
+    <div class="dropdown">
+      <button class="dropbtn">Choose Software ▼</button>
+      <div class="dropdown-content">
+        <div class="software-option">
+          Eclipse
+          <div class="nested-dropdown">
+            <div
+              class="feature"
+              data-software="eclipse"
+              data-feature="shortcuts"
+            >
+              Shortcuts
+            </div>
+            <div class="feature" data-software="eclipse" data-feature="howto">
+              How To
+            </div>
+          </div>
+        </div>
+        <div class="software-option">
+          VS Code
+          <div class="nested-dropdown">
+            <div
+              class="feature"
+              data-software="vscode"
+              data-feature="shortcuts"
+            >
+              Shortcuts
+            </div>
+            <div class="feature" data-software="vscode" data-feature="howto">
+              How To
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="shortcutContent"></div>
+
+    <script>
+      const shortcutContent = document.getElementById("shortcutContent");
+
+      // Shortcut texts
+      const shortcutsData = {
+        eclipse: `
+    <h2>Eclipse Shortcuts</h2>
+    <ul>
+      <li><b>Ctrl+Shift</b> - Content assist (auto-complete suggestions)</li>
+      <li><b>Ctrl+Shift+F</b> - Format Code</li>
+      <li><b>Ctrl+ /</b> - Toggle line comment</li>
+    </ul>
+  `,
+        vscode: `
+    <h2>VS Code Shortcuts</h2>
+    <ul>
+      <li><b>Ctrl+P</b> - Quick Open</li>
+      <li><b>Ctrl+Shift+P</b> - Command Palette</li>
+      <li><b>Ctrl+\`</b> - Toggle Terminal</li>
+    </ul>
+  `,
+      };
+
+      // Handle click on nested feature
+      document.querySelectorAll(".feature").forEach((item) => {
+        item.addEventListener("click", () => {
+          const software = item.dataset.software;
+          const feature = item.dataset.feature;
+
+          if (feature === "shortcuts") {
+            shortcutContent.innerHTML =
+              shortcutsData[software] || "<p>No shortcuts available.</p>";
+          } else if (feature === "howto") {
+            const urls = {
+              eclipse: "eclipse-howto.html",
+              vscode: "vscode-howto.html",
+            };
+            window.location.href = urls[software];
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
