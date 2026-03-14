@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+//JS
+=======
 const shortcutContent = document.getElementById("shortcutContent");
 
 const shortcutsData = {
@@ -36,3 +39,4 @@ document.querySelectorAll(".feature").forEach((item) => {
     }
   });
 });
+>>>>>>> main
