@@ -1,6 +1,5 @@
 const shortcutContent = document.getElementById("shortcutContent");
 
-// Shortcut texts
 const shortcutsData = {
   eclipse: `
     <h2>Eclipse Shortcuts</h2>
@@ -20,7 +19,6 @@ const shortcutsData = {
   `,
 };
 
-// Handle click on nested feature
 document.querySelectorAll(".feature").forEach((item) => {
   item.addEventListener("click", () => {
     const software = item.dataset.software;
