@@ -64,3 +64,15 @@ body {
 .content li:hover {
   background-color: #30363d;
 }
+
+/* Images */
+.content img {
+  width: 100%; /* make them scale nicely inside the content */
+  max-width: 300px; /* limit their size */
+  height: auto; /* keep aspect ratio */
+  border-radius: 8px; /* rounded corners */
+  margin: 20px auto; /* vertical spacing and center if smaller */
+  display: block; /* centers the image */
+  object-fit: cover; /* ensures the image fills its box nicely */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* subtle shadow for depth */
+}
