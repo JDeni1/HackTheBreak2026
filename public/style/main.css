@@ -1,0 +1,146 @@
+body {
+  background: #0d1117;
+  color: #c9d1d9;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Jumbotron */
+.jumbotron {
+  background: linear-gradient(135deg, #161b22, #0d1117);
+  color: #f0f6fc;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.jumbotron h1.display-4 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.jumbotron p.lead {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #21262d;
+  color: #f0f6fc;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.dropbtn {
+  background-color: #21262d;
+  color: #f0f6fc;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.dropdown:hover {
+  background-color: #30363d;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #161b22;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.software-option {
+  padding: 12px 15px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.software-option:hover {
+  background-color: #21262d;
+}
+
+/* Nested Dropdown */
+.nested-dropdown {
+  display: none;
+  margin-top: 5px;
+  margin-left: 10px;
+  border-left: 2px solid #30363d;
+  padding-left: 10px;
+}
+
+.software-option:hover .nested-dropdown {
+  display: block;
+}
+
+.feature {
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.feature:hover {
+  background-color: #30363d;
+}
+
+/* Shortcut Content */
+#shortcutContent {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 40px 20px;
+  border-radius: 0;
+  background: #161b22;
+  box-shadow: none;
+}
+
+#shortcutContent h2 {
+  margin-top: 0;
+  color: #58a6ff;
+}
+
+#shortcutContent h3 {
+  margin-top: 20px;
+  color: #79c0ff;
+}
+
+#shortcutContent ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#shortcutContent li {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background-color: #21262d;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+#shortcutContent .inner-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
