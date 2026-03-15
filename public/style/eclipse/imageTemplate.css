@@ -1,0 +1,16 @@
+.image-template {
+  width: 900px; /* fixed width */
+  height: 600px; /* fixed height */
+  background: #0f1720; /* background similar to your screenshot */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-template img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps whole image visible */
+}
