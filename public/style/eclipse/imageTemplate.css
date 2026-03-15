@@ -13,5 +13,5 @@
 .image-template img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* keeps entire image visible */
+  object-fit: contain;
 }
