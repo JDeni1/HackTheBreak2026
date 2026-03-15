@@ -28,8 +28,8 @@ body {
 
 /* Content */
 .content {
-  max-width: 900px; /* center the content */
-  margin: 40px auto; /* top/bottom space + centered */
+  max-width: 900px;
+  margin: 40px auto;
   padding: 30px 20px;
   background: #161b22;
   border-radius: 8px;
