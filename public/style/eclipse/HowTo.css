@@ -68,7 +68,7 @@ body {
 /* Images */
 .content img {
   width: 100%;
-  max-width: 300px;
+  max-width: 800px;
   height: auto;
   border-radius: 8px;
   margin: 20px auto;
